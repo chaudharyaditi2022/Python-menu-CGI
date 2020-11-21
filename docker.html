@@ -1,0 +1,79 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color:#E2E2E2">
+<img  src="https://webobjects.s3.ap-south-1.amazonaws.com/Docker-Logo.png"  class="center"  />
+
+<form action="http://192.168.43.67/cgi-bin/docker.py">
+<input name="search" type="text" placeholder="&#128269 Search  for  Docker  Images..." class="center" style="width: 50%" >
+</form>
+
+<div style="margin-top: 30px">
+
+<form action="http://192.168.43.67/cgi-bin/docker.py">
+	<div class="column">
+		<h3>Launch a New Container</h3>
+		<input type="text" name="osname" placeholder="Enter Conatiner name ..." style="width: 85%;margin-bottom:15px" />
+		<select name="image" style="width: 85%; height: 35px; margin-bottom: 20px;">
+			<option disabled selected>Select Image</option>
+			<option>centos:7</option>
+			<option>centos:latest</option>
+			<option>ubuntu:14</option>
+		</select>
+		<button class="bluebtn" name="btn" value="launchbtn">Launch Container</button>
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/docker.py">
+	<div class="column">
+		<h3>Start/Stop an Existing Container</h3>
+		<input type="text" name="osname" placeholder="Enter Conatiner name or ID ..." style="width: 85%;margin-bottom:10px" /></br>
+		<h3><input type="radio" name="task" value="start"/> Start  
+		 <input type="radio" name="task" value="stop"/> Stop</h3>
+		<button class="bluebtn" name="btn" value="stbtn" style="margin-top: 15px;">Start/Stop Container</button>
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/docker.py">
+	<div class="column">
+		<h3>Remove a container</h3>
+		<input type="text" name="osname" placeholder="Enter Conatiner name or ID ..." style="width: 85%;" />
+		<h6 >**Make sure Container is stopped before removing**<h6>
+		<button class="bluebtn" name="btn" value="rmbtn">Remove Container</button>
+		<h3>Remova All Existing Conatiners </h3>
+		<button class="bluebtn" name="btn" value="rmallbtn" style="margin-top: 5px;">Remove all Conatiner</button>
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/docker.py">
+	<div class="column">
+		<h3>List all Existing Containers </h3>
+		<button class="bluebtn" name="btn" value="allcontbtn" style="margin-top: 15px;">List all Conatiners</button>
+		<h3>List Running Containers </h3>
+		<button class="bluebtn" name="btn" value="contbtn" style="margin-top: 15px;">List Running Containers</button>
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/docker.py">
+	<div class="column">
+		<h3>List Log of a container</h3>
+		<input type="text" name="osname" placeholder="Enter Conatiner name or ID ..." style="width: 85%;" />
+		<button class="bluebtn" name="btn" value="logbtn" style="margin-top: 15px;">List Log of a Container</button>
+		<h3>List all Downloaded Images </h3>
+		<button class="bluebtn" name="btn" value="imgbtn" style="margin-top: 15px;">Images Available</button>
+		
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/docker.py">
+	<div class="column">
+		<h3>Info of Existing Container</h3>
+		<input type="text" name="osname" placeholder="Enter Conatiner name or ID ..." style="width: 85%;" />
+		<button class="bluebtn" name="btn" value="infobtn" style="margin-top: 15px;">See Info</button>
+	</div>
+</form>
+
+</div>
+</body>
+</html>
