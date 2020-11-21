@@ -1,9 +1,17 @@
 <html>
 <head>
   <link rel="stylesheet" href="style.css">
+  <script>
+function goBack() {
+  window.history.back()
+}
+</script>
 </head>
 <body style="background-color:#E2E2E2">
 <img  src="https://webobjects.s3.ap-south-1.amazonaws.com/Docker-Logo.png"  class="center"  />
+	
+<button onclick="goBack()" class="button">Go Back</button>
+<input type="reset" class="bluebtn" value="Reset"/>
 
 <form action="http://192.168.43.67/cgi-bin/docker.py">
 <input name="search" type="text" placeholder="&#128269 Search  for  Docker  Images..." class="center" style="width: 50%" >
