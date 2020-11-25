@@ -1,0 +1,88 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script>
+function goBack() {
+  window.history.back()
+}
+</script>
+</head>
+<body style="background-color:#E2E2E2">
+<img  src="https://webobjects.s3.ap-south-1.amazonaws.com/hadoop.png"  class="center"  />
+
+<button onclick="goBack()" class="button">Go Back</button>
+
+<div style="margin-top: 30px">
+
+<form action="http://192.168.43.67/cgi-bin/hadoop.py" method="post">
+	<div class="column">
+		<h3>Configure system</h3>
+		<input type="text" name="IP" placeholder="Enter IP Address of Namenode ..." required="True" style="width: 85%;margin-bottom:10px" />
+		<input type="text" name="folder" required="True" placeholder="Enter datanode/namenode folder path" style="width: 85%;margin-bottom:10px; font-size: 13px" />
+		<select name="node" required="True"  style="width: 85%; height: 35px; margin-bottom: 20px;">
+			<option value="">Select node type</option>
+			<option value="namenode">Namenode</option>
+			<option value="datanode">Datanode</option>
+		</select>
+		<button class="redbtn" name="btn" value="configbtn">Configure</button>
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/hadoop.py" method="post">
+	<div class="column">
+		<h3 style="margin-bottom: 15px;">Start/Stop an Namenode/Datanode</h3>
+		<h3><input type="radio"  required="True"  name="task" value="start" /> Start  
+		 <input type="radio"  required="True"  name="task" value="stop"/> Stop</h3>
+		<button class="redbtn" name="btn" value="stnbtn" style="margin-top: 15px;">Namenode</button>
+		<button class="redbtn" name="btn" value="stdbtn" style="margin-top: 15px;">Datanode</button>
+		
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/hadoop.py" method="post">
+	<div class="column">
+		<h3>Configure system as Client</h3>
+		<input type="text" name="IP" placeholder="Enter IP Address of Namenode ..." required="True" style="width: 85%;margin-bottom:10px" />
+		<button class="redbtn" name="btn" value="configcbtn">Configure as Client</button>
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/hadoop.py" method="post">
+	<div class="column">
+		<h3>Perform Client operations</h3>
+		<input type="text" name="file" placeholder="Enter path of the file ..." required="True" style="width: 85%;margin-bottom:10px" />
+		<select name="operation" required="True"  style="width: 85%; height: 35px; margin-bottom: 20px;">
+			<option value="">Select operation to perform</option>
+			<option value="-put">Upload file</option>
+			<option value="-cat">Read file</option>
+			<option value="-touchz">Create empty file</option>
+			<option value="-rm">Remove file</option>
+		</select>
+		<button class="redbtn" name="btn" value="opbtn">Run</button>
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/hadoop.py" method="post">
+	<div class="column">
+		<h3>See Cluster Information</h3>
+		<button class="redbtn" name="btn" value="infobtn" style="margin-bottom: 15px; margin-top: 15px">See Info</button>
+		<h3>List all files info in Cluster</h3>
+		<button class="redbtn" name="btn" value="fileinfobtn" style="margin-bottom: 15px; margin-top: 15px">List files Info</button>
+
+	</div>
+</form>
+
+<form action="http://192.168.43.67/cgi-bin/hadoop.py" method="post">
+	<div class="column">
+		<h3>Get Hadoop Cluster Web UI link</h3>
+		<input type="text" name="IP" placeholder="Enter IP Address of Namenode ..." required="True" style="width: 85%;margin-top:10px" />
+		<button class="redbtn" name="btn" value="getlink" style="margin-bottom: 15px; margin-top: 15px">Get link</button>
+
+	</div>
+</form>
+
+
+</div>
+</body>
+</html>
+

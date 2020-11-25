@@ -1,0 +1,89 @@
+.redbtn {
+  background-color: #C12630; 
+  width: auto;
+  border: 100px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.button {
+  
+  background-color: #4CAF50; /* Green */
+  border: 100px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.bluebtn {
+  
+  background-color: #008CBA; /*Blue */
+  border: 100px;
+  width: auto;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.mbtn {
+  
+  background-color: #D33E62; 
+  border: 100px;
+  width: auto;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.column {
+	background-color:  #BFC1C2;
+	width: 24.5%;
+	height: 300px;
+	float: left;
+	margin-left: 5px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+
+
+input[type=text] {
+  
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 30px;
+}
+

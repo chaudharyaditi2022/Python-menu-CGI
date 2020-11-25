@@ -1,0 +1,91 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+   <script>
+function goBack() {
+  window.history.back()
+}
+</script>
+</head>
+<body style="background-color:#E2E2E2">
+<div style="background-color: #D33E62; height: 80px">
+	<h1 style="text-align: center; color: #FFFFFF;font-size: 45px">Linux Volume Management in Redhat</h1>
+</div></br>
+
+<button onclick="goBack()" class="button">Go Back</button>
+
+<div style="margin-top: 30px">
+
+<form method="post" action="http://192.168.43.67/cgi-bin/LVM.py">
+	<div class="column">
+		<h3>Create a Volume Group</h3>
+		<input required="True" type="text" name="vgname" placeholder="Enter virtual group name ..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="disks" placeholder="Enter disks name ..." style="width: 85%;" />
+		<h4>** Enter disks name separated by space**</h4> 
+		
+		<button class="mbtn" name="btn" value="vgbtn">Create Virtual group</button>
+	</div>
+</form>
+
+
+<form method="post" action="http://192.168.43.67/cgi-bin/LVM.py">
+	<div class="column">
+		<h3>Create Logical Volume Group</h3>
+		<input required="True" type="text" name="vgname" placeholder="Enter virtual group name ..." style="width: 85%;margin-bottom:5px" />
+		<input required="True" type="text" name="lvname" placeholder="Enter logical Volume name ..." style="width: 85%;margin-bottom:5px" />
+		<input required="True" type="text" name="size" placeholder="Enter size [K,M,G,T,P,E]" style="width: 85%;margin-bottom:5px" />
+		<input required="True" type="text" name="mountpt" placeholder="Enter mountpoint path" style="width: 85%;margin-bottom:5px" />
+
+		<button class="mbtn" name="btn" value="lvbtn">Create Logical Volume</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/LVM.py">
+	<div class="column">
+		<h3>Extend/Reduce Logical Volume</h3>
+		<input required="True" type="text" name="vgname" placeholder="Enter virtual group name ..." style="width: 85%;margin-bottom:5px" />
+		<input required="True" type="text" name="lvname" placeholder="Enter logical Volume name ..." style="width: 85%;margin-bottom:5px" />
+		<input required="True" type="text" name="size" placeholder="Enter final size [K,M,G,T,P,E]" style="width: 85%;margin-bottom:5px" />
+		<h3><input required="True" type="radio" name="task" value="extend"/> Extend  
+		 <input required="True" type="radio" name="task" value="reduce"/> Reduce</h3>
+		<button class="mbtn" name="btn" value="stbtn" style="margin-top: 5px;">Extend/Reduce LV</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/LVM.py">
+	<div class="column">
+		<h3>Delete/See Info of a Virtual Group</h3>
+		<input required="True" type="text" name="vgname" placeholder="Enter virtual group name ..." style="width: 85%;margin-bottom:15px" />
+		<button class="mbtn" name="btn" value="vginfobtn">See Info</button>
+		
+		<button class="mbtn" name="btn" value="delvgbtn">Delete VG</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/LVM.py">
+	<div class="column">
+		<h3>See Info/Delete Logical Volume Group</h3>
+		<input required="True" type="text" name="vgname" placeholder="Enter virtual group name ..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="lvname" placeholder="Enter logical Volume name ..." style="width: 85%;margin-bottom:15px" />
+		<button class="mbtn" name="btn" value="lvinfobtn">See Info</button>
+		<button class="mbtn" name="btn" value="dellvbtn">Delete LV</button>
+		
+		
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/LVM.py">
+	<div class="column">
+		<h3>See All Disks Available</h3>
+		<button class="mbtn" name="btn" value="diskinfobtn">Disks Info</button>
+		<h3>See partition info and mountpoints</h3>
+		<button class="mbtn" name="btn" value="partinfobtn">Partition Info</button>
+		<h3>See All Virtual Group Info</h3>
+		<button class="mbtn" name="btn" value="allvginfobtn"> All Virtual Group Info</button>
+	</div>
+</form>
+
+
+</body>
+</html>
+

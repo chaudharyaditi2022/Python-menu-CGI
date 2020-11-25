@@ -1,0 +1,143 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+   <script>
+function goBack() {
+  window.history.back()
+}
+</script>
+</head>
+<body style="background-color:#E2E2E2">
+<img  src="https://webobjects.s3.ap-south-1.amazonaws.com/aws.png"  class="center" style="width: 30%"  />
+<button onclick="goBack()" class="button">Go Back</button>
+
+<div style="margin-top: 30px">
+
+	<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Create Security Group..</h3>
+		<input required="True" type="text" name="grpname" placeholder="Enter Security group name..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="description" placeholder="Give Description of your security group..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="vpc" placeholder="VPC ID..." style="width: 85%;margin-bottom:15px" />
+		<button class="bluebtn" name="btn" value="createsgbtn">Create Security Group</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Add Inbound Rules..</h3>
+		<input required="True" type="text" name="grpid" placeholder="Enter Security group ID..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="protocol" placeholder="Enter protocol..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="port" placeholder="Enter port number..." style="width: 85%;margin-bottom:10px" />
+		<button class="bluebtn" name="btn" value="addrulesbtn">Add Inbound Rules</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Create EBS Volume..</h3>
+		<input required="True" type="text" name="ebsname" placeholder="Enter EBS Volume name..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="size" placeholder="Enter size of volume..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="az" placeholder="Enter availability zone..." style="width: 85%;margin-bottom:10px" />
+		<button class="bluebtn" name="btn" value="ebsbtn">Create volume</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Attach EBS Volume..</h3>
+		<h6>Before attaching EBS volume to an instance make sure your EBS volume and instance are in the same availability zone</h6>
+		<input required="True" type="text" name="volid" placeholder="Enter EBS Volume ID..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="instance" placeholder="Enter instance ID..." style="width: 85%;margin-bottom:15px" />
+		<button class="bluebtn" name="btn" value="attachebsbtn">Attach EBS</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Create S3 bucket..</h3>
+		<input required="True" type="text" name="bucketname" placeholder="Enter Bucket name..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="region" placeholder="Enter region..." style="width: 85%;margin-bottom:15px" />
+		<button class="bluebtn" name="btn" value="s3btn">Create bucket</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Start/Stop/Terminate an Existing Container</h3>
+		<input required="True" type="text" name="instance" placeholder="Enter Instance ID ..." style="width: 85%;margin-bottom:10px" /></br>
+		<h3><input required="True" type="radio" name="task" value="start"/>Start  
+		 <input required="True" type="radio" name="task" value="stop"/> Stop
+		 <input required="True" type="radio" name="task" value="terminate"/> Terminate</h3>
+		<button class="bluebtn" name="btn" value="stbtn" style="margin-top: 15px;">Confirm</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Change bucket object permission..</h3>
+		<input required="True" type="text" name="b_name" placeholder="Enter bucket name..." style="width: 85%;margin-bottom:5px" />
+		<input required="True" type="text" name="img_name" placeholder="Enter image file name..." style="width: 85%;margin-bottom:5px" />
+		<input required="True" type="text" name="permission" placeholder="Enter permission..." style="width: 85%;" />
+		<h6>"private","public-read","public-read-write","authenticated-read",
+		"aws-exec-read","bucket-owner-read","bucket-owner-full-control"</h6>
+		<button class="bluebtn" name="btn" value="chngper">Change permission</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Upload Image in S3 bucket..</h3>
+		<input required="True" type="text" name="b_name" placeholder="Enter bucket name..." style="width: 85%;margin-bottom:15px"/>
+		<input required="True" type="text" name="img_path" placeholder="Enter image file path..." style="width: 85%;margin-bottom:15px" />
+		<button class="bluebtn" name="btn" value="upload">Upload Image</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column" style="height: 400px">
+		<h3>Launch a EC2 Instance</h3>
+		<input required="True" type="text" name="image" placeholder="Enter Image ID ..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="instance" placeholder="Enter Instance-type..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="count" placeholder="Enter no. of instance..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="sgid" placeholder="Enter Security ID ..." style="width: 85%;margin-bottom:15px" />
+		<input required="True" type="text" name="keyname" placeholder="Enter key name ..." style="width: 85%;margin-bottom:15px" />
+		<button class="bluebtn" name="btn" value="launchbtn">Launch EC2-Instance</button>
+	</div>
+</form>
+
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Launch Distribution</h3>
+		<input required="True" type="text" name="bucketname" placeholder="Enter Bucketname..." style="width: 85%;margin-bottom:15px" />
+		<button class="bluebtn" name="btn" value="distbtn">Launch Distribution</button>
+	</div>
+</form>
+
+<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Describe EC2-Instances</h3>
+		<button class="bluebtn" name="btn" value="desec2">Describe EC2-Instances</button>
+		<h3>Describe Key-pairs</h3>
+		<button class="bluebtn" name="btn" value="deskey">Describe Key-pairs</button>
+		<h3>Describe Security-groups</h3>
+		<button class="bluebtn" name="btn" value="dessg">Describe Security-groups</button>
+	</div>
+</form>
+
+
+	<form method="post" action="http://192.168.43.67/cgi-bin/aws.py">
+	<div class="column">
+		<h3>Create/Delete Keypair</h3>
+		<input required="True" type="text" name="keyname" placeholder="Enter Keyname ..." style="width: 85%;margin-bottom:15px" />
+		<button class="bluebtn" name="btn" value="createKeybtn" >Create Keypair</button>
+		<button class="bluebtn" name="btn" value="deleteKeybtn"  >Delete Keypair</button>
+	</div>
+</form>
+
+</div>
+
+</body>
+</html>
+
